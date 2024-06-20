@@ -5,7 +5,6 @@ interface Props {
 	className?: string;
 }
 const Text = ({ value, className }: Props) => {
-	// md:w-10/12
 	return (
 		<p
 			className={cn(

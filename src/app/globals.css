@@ -30,7 +30,7 @@
 		--destructive-foreground: 210 40% 98%;
 
 		--lightdark: 345, 6%, 13%, 1;
-	
+
 		--border: 214.3 31.8% 91.4%;
 		--input: 214.3 31.8% 91.4%;
 		--ring: 222.2 84% 4.9%;
@@ -76,4 +76,17 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+}
+.bg-hero-gradient {
+	background: linear-gradient(
+			to right,
+			rgba(0, 0, 0, 0.6) 0%,
+			rgba(26, 32, 44, 0.85) 30%,
+			rgba(26, 32, 44, 0.7) 40%,
+			transparent 100%
+		),
+		url("/images/Ejik_group_hero.webp");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-blend-mode: multiply;
 }

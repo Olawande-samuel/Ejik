@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss"
-import plugin from "tailwindcss/plugin"
 
 const config = {
   darkMode: ["class"],
@@ -85,18 +84,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), plugin(function({addUtilities}) {
-    const newUtils = {
-      ".bg-hero-gradient": {
-        backgroundImage: "linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(26, 32, 44, 0.85) 30%, rgba(26, 32, 44, 0.7) 40%, transparent 100%), url('/images/Ejik_group_hero.webp')}",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundBlendMode: "multiply"
-        // backgroundImage: 'linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(26, 32, 44, 0.85) 30%, rgba(26, 32, 44, 0.7) 40%, transparent 100%)',
-      }
-    }
-    addUtilities(newUtils);
-  })],
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config
 
 export default config
