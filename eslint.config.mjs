@@ -4,7 +4,7 @@ import tseslint from "typescript-eslint";
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 import pluginJSXReactConfig from "eslint-plugin-react/configs/jsx-runtime.js";
 import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
-import tailwind from 'eslint-plugin-tailwindcss';
+import tailwind from "eslint-plugin-tailwindcss";
 
 export default [
 	{
@@ -19,10 +19,10 @@ export default [
 	},
 	{ languageOptions: { globals: globals.browser } },
 	pluginJs.configs.recommended,
-  pluginReactConfig,
-  pluginJSXReactConfig,
+	pluginReactConfig,
+	pluginJSXReactConfig,
 	...tseslint.configs.recommended,
-  ...tailwind.configs["flat/recommended"],
+	...tailwind.configs["flat/recommended"],
 	eslintPluginPrettier,
 	{
 		files: ["**/*.jsx"],
@@ -34,12 +34,12 @@ export default [
 			"@typescript-eslint/no-explicit-any": "error",
 			"no-unused-vars": ["error", { args: "none" }],
 		},
+	},
+	{
 		settings: {
 			react: {
 				version: "detect",
 			},
 		},
 	},
-
-
 ];
