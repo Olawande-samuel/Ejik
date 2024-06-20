@@ -28,7 +28,7 @@ const Navbar = () => {
 						<div className="">
 							<button
 								onClick={() => setOpenNav(!openNav)}
-								className={`relative size-8 cursor-pointer border-none text-2xl text-accent outline-none dark:text-accent lg:hidden  ${openNav ? "toggle-btn" : ""}`}
+								className="relative size-8 cursor-pointer border-none text-2xl text-accent outline-none dark:text-accent lg:hidden"
 							>
 								<span className="sr-only">Open main menu</span>
 								<Menu size={42} color="#FFF" />
