@@ -4,10 +4,10 @@ import Text from "../Text";
 const Mission = () => {
 	return (
 		<section>
-			<div className="flex">
+			<div className="flex flex-col lg:flex-row">
 				<div className="bg-primary py-36">
 					<Container>
-						<p className="text-7xl font-light text-white screen-980:w-[85%]">
+						<p className="text-5xl font-light text-white md:text-7xl screen-980:w-[85%]">
 							Provide <span className="font-bold uppercase">Quality</span> with
 							<span className="font-bold uppercase text-accent">
 								Efficient

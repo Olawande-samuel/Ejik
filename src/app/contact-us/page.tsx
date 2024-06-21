@@ -8,11 +8,11 @@ const ContactUs = () => {
 			<div className="mb-20">
 				<Navbar isLight />
 			</div>
-			<section className="flex min-h-[120vh] items-center pb-32">
-				<div className="basis-3/5">
+			<section className="flex min-h-[120vh] flex-col items-center gap-3 pb-32 md:flex-row">
+				<div className="md:basis-3/5">
 					<ContactForm />
 				</div>
-				<div className="basis-2/5">
+				<div className="md:basis-2/5">
 					<ContactCard />
 				</div>
 			</section>

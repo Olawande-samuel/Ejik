@@ -4,8 +4,8 @@ import Text from "../Text";
 
 const Vision = () => {
 	return (
-		<section className="flex min-h-screen">
-			<div className="h-[120vh] basis-3/5 bg-[#F7F0F0] p-8">
+		<section className="flex flex-col lg:min-h-screen lg:flex-row">
+			<div className="bg-[#F7F0F0] p-8 lg:h-[120vh] lg:basis-3/5">
 				<div className="grid min-h-full place-items-center bg-[url('/images/vision-bg.png')] bg-cover bg-no-repeat">
 					<div className="w-full md:w-[70%]">
 						<Text
@@ -19,8 +19,8 @@ const Vision = () => {
 					</div>
 				</div>
 			</div>
-			<div className="relative h-[120vh] basis-2/5 pt-3">
-				<div className="relative h-full">
+			<div className="relative pt-3 lg:h-[120vh] lg:basis-2/5">
+				<div className="relative h-[400px] lg:h-full">
 					<Image
 						src={"/images/vision.png"}
 						fill

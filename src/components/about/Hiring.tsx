@@ -8,7 +8,7 @@ import { Separator } from "../ui/separator";
 
 const Hiring = () => {
 	return (
-		<section className="min-h-[120vh]  py-24">
+		<section className="min-h-[120vh] py-24">
 			<Container>
 				<div>
 					<div>
@@ -30,7 +30,7 @@ const Hiring = () => {
 							</Link>
 						</div>
 					</div>
-					<div className="flex items-center gap-8">
+					<div className="flex flex-col items-center gap-8 lg:flex-row">
 						<section className="md:basis-3/5">
 							<JobCard />
 							<Separator className="bg-[#EAECF0]" />
