@@ -9,7 +9,7 @@ const StatsText = ({
 	headerTrail,
 }: {
 	headerTrail?: string;
-	header: string;
+	header: number;
 	title: string;
 }) => {
 	const [scope, animate] = useAnimate();
