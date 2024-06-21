@@ -40,7 +40,7 @@ const WhyJoin = () => {
 							value="Lorem ipsum dolor sit amet consectetur. Eu amet pellentesque porta felis. Fringilla semper sed id pellentesque."
 						/>
 					</header>
-					<section className="flex gap-10">
+					<section className="flex flex-col flex-wrap justify-center gap-10 md:flex-row lg:flex-nowrap">
 						{data.map((item) => (
 							<WhyCard {...item} key={item.id} />
 						))}

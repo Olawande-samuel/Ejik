@@ -25,7 +25,7 @@ const JobCard = () => {
 			</CardContent>
 			<CardFooter className="flex-col items-start space-y-4">
 				<div className="mb-2">
-					<div className="mb-2 flex gap-6 text-[#475467]">
+					<div className="mb-2 flex flex-wrap gap-6 text-[#475467]">
 						<span className="flex">
 							<MapPin className="mr-2" /> Onsite
 						</span>
