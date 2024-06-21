@@ -41,7 +41,7 @@ const Hiring = () => {
 								src="/images/jobs.webp"
 								width={600}
 								height={655}
-								className="max-w-100%"
+								className="max-w-full"
 								alt="Two smiling women in an official setting one of whom is shaking the hand of a partially shown man"
 							/>
 						</section>
