@@ -8,7 +8,7 @@ import Nav from "./Nav";
 import NavMobile from "./NavMobile";
 import { cn } from "@/lib/utils";
 
-const Navbar = ({ isLight }: { isLight: boolean }) => {
+const Navbar = ({ isLight = false }: { isLight?: boolean }) => {
 	const [openNav, setOpenNav] = useState(false);
 	return (
 		<section className="absolute inset-x-0 top-0 z-30 bg-transparent ">
