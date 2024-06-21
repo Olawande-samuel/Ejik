@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
 	NavigationMenu,
 	NavigationMenuContent,
@@ -10,7 +11,7 @@ const data = [
 	{
 		id: 1,
 		title: "About Us",
-		link: "",
+		link: "/about-us",
 		isDropdown: false,
 	},
 	{
@@ -28,20 +29,20 @@ const data = [
 	{
 		id: 4,
 		title: "Careers",
-		link: "",
+		link: "/careers",
 		isDropdown: false,
 	},
 	{
 		id: 5,
 		title: "Contact Us",
-		link: "",
+		link: "/contact-us",
 		isDropdown: false,
 	},
 ];
 
 const Nav = () => {
 	return (
-		<NavigationMenu className="text-white">
+		<NavigationMenu>
 			<NavigationMenuList className="flex flex-col items-center gap-8 lg:flex-row">
 				{data.map((item) =>
 					item.isDropdown ? (
@@ -53,12 +54,12 @@ const Nav = () => {
 						</NavigationMenuItem>
 					) : (
 						<NavigationMenuItem key={item.id}>
-							<a
+							<Link
 								className="inline-block w-full rounded-md p-2 text-xs hover:bg-accent hover:text-black"
-								href="/"
+								href={item.link}
 							>
 								{item.title}
-							</a>
+							</Link>
 						</NavigationMenuItem>
 					),
 				)}

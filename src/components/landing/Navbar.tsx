@@ -6,8 +6,9 @@ import Container from "../Container";
 import { Menu } from "lucide-react";
 import Nav from "./Nav";
 import NavMobile from "./NavMobile";
+import { cn } from "@/lib/utils";
 
-const Navbar = () => {
+const Navbar = ({ isLight = false }: { isLight?: boolean }) => {
 	const [openNav, setOpenNav] = useState(false);
 	return (
 		<section className="absolute inset-x-0 top-0 z-30 bg-transparent ">
@@ -22,7 +23,12 @@ const Navbar = () => {
 								alt="logo"
 							/>
 						</div>
-						<div className="hidden lg:block">
+						<div
+							className={cn(
+								"hidden text-white lg:block",
+								isLight && "text-primary",
+							)}
+						>
 							<Nav />
 						</div>
 						<div className="">
@@ -31,10 +37,20 @@ const Navbar = () => {
 								className="relative size-8 cursor-pointer border-none text-2xl text-accent outline-none dark:text-accent lg:hidden"
 							>
 								<span className="sr-only">Open main menu</span>
-								<Menu size={42} color="#FFF" />
+								<Menu size={42} color={isLight ? "#231F20" : "#FFF"} />
 							</button>
-							<div className="hidden rounded-md border-[0.52px] border-white px-4 lg:block  ">
-								<select className="rounded-none border-0 bg-transparent text-xs text-white focus:ring-0 focus-visible:outline-none">
+							<div
+								className={cn(
+									"hidden rounded-md border-[0.52px] border-white px-4 lg:block",
+									isLight && "border-primary",
+								)}
+							>
+								<select
+									className={cn(
+										"rounded-none border-0 bg-transparent text-xs text-white focus:ring-0 focus-visible:outline-none",
+										isLight && "text-primary border-primary",
+									)}
+								>
 									<option className="text-center text-red-900" value="">
 										Chris Ejik Groups
 									</option>
