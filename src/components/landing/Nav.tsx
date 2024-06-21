@@ -23,8 +23,8 @@ const data = [
 	{
 		id: 3,
 		title: "News & Events",
-		link: "",
-		isDropdown: true,
+		link: "https://ejik-blog.vercel.app/",
+		isExt: true,
 	},
 	{
 		id: 4,
@@ -51,6 +51,17 @@ const Nav = () => {
 								{item.title}
 							</NavigationMenuTrigger>
 							<NavigationMenuContent></NavigationMenuContent>
+						</NavigationMenuItem>
+					) : item.isExt ? (
+						<NavigationMenuItem key={item.id}>
+							<a
+								className="inline-block w-full rounded-md p-2 text-xs hover:bg-accent hover:text-black"
+								href={item.link}
+								target="_blank"
+								rel="noreferrer"
+							>
+								{item.title}
+							</a>
 						</NavigationMenuItem>
 					) : (
 						<NavigationMenuItem key={item.id}>
