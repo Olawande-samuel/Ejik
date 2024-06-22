@@ -8,6 +8,7 @@ import Nav from "./Nav";
 import NavMobile from "./NavMobile";
 import { cn } from "@/lib/utils";
 import NavSelect from "./NavSelect";
+import Link from "next/link";
 
 const Navbar = ({ isLight = false }: { isLight?: boolean }) => {
 	const [openNav, setOpenNav] = useState(false);
@@ -17,12 +18,14 @@ const Navbar = ({ isLight = false }: { isLight?: boolean }) => {
 				<Container>
 					<div className="flex items-center justify-between   py-2">
 						<div className="">
-							<Image
-								src="/images/logo.svg"
-								width={130}
-								height={40}
-								alt="logo"
-							/>
+							<Link href="/">
+								<Image
+									src="/images/logo.svg"
+									width={130}
+									height={40}
+									alt="logo"
+								/>
+							</Link>
 						</div>
 						<div
 							className={cn(

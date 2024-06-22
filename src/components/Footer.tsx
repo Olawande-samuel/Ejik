@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Container from "./Container";
+import Link from "next/link";
 
 const Footer = () => {
 	return (
@@ -7,12 +8,14 @@ const Footer = () => {
 			<Container>
 				<div className="flex flex-col justify-between gap-6 py-8 text-white md:flex-row">
 					<div className="">
-						<Image
-							src="/images/logo-white.svg"
-							width={130}
-							height={60}
-							alt="logo"
-						/>
+						<Link href="/">
+							<Image
+								src="/images/logo-white.svg"
+								width={130}
+								height={60}
+								alt="logo"
+							/>
+						</Link>
 					</div>
 					<ul className="space-y-1 text-sm">
 						<li>Company</li>
