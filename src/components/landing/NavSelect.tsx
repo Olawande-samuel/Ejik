@@ -28,7 +28,7 @@ const NavSelect = ({ isLight }: { isLight: boolean }) => {
 				onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
 					setValue(e.target.value)
 				}
-				defaultValue="main"
+				value="1"
 				className={cn(
 					"rounded-none border-0 bg-transparent text-xs text-white focus:ring-0 focus-visible:outline-none",
 					isLight && "text-primary border-primary",
