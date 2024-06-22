@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import Nav from "./Nav";
 import React, { SetStateAction } from "react";
+import NavSelect from "./NavSelect";
 
 const NavMobile = ({
 	setOpenNav,
@@ -16,27 +17,12 @@ const NavMobile = ({
 					onClick={() => setOpenNav(false)}
 				/>
 			</div>
-			<div className="grid flex-1 place-items-center">
+			<div className="grid flex-1 place-items-center text-white">
 				<div className="">
 					<Nav />
 				</div>
 				<div className="flex-1">
-					<div className="rounded-md border-[0.52px] border-white px-4  ">
-						<select className="rounded-none border-0 bg-transparent text-xs text-white focus:ring-0">
-							<option className="text-center text-red-900" value="">
-								Chris Ejik Groups
-							</option>
-							<option className="text-center text-red-900" value="">
-								Chris Ejik Pharmaceuticals
-							</option>
-							<option className="text-center text-red-900" value="">
-								Chris Ejik International
-							</option>
-							<option className="text-center text-red-900" value="">
-								Chris Ejik Engineering
-							</option>
-						</select>
-					</div>
+					<NavSelect isLight={false} />
 				</div>
 			</div>
 		</section>

@@ -7,6 +7,7 @@ import { Menu } from "lucide-react";
 import Nav from "./Nav";
 import NavMobile from "./NavMobile";
 import { cn } from "@/lib/utils";
+import NavSelect from "./NavSelect";
 
 const Navbar = ({ isLight = false }: { isLight?: boolean }) => {
 	const [openNav, setOpenNav] = useState(false);
@@ -39,31 +40,8 @@ const Navbar = ({ isLight = false }: { isLight?: boolean }) => {
 								<span className="sr-only">Open main menu</span>
 								<Menu size={42} color={isLight ? "#231F20" : "#FFF"} />
 							</button>
-							<div
-								className={cn(
-									"hidden rounded-md border-[0.52px] border-white px-4 lg:block",
-									isLight && "border-primary",
-								)}
-							>
-								<select
-									className={cn(
-										"rounded-none border-0 bg-transparent text-xs text-white focus:ring-0 focus-visible:outline-none",
-										isLight && "text-primary border-primary",
-									)}
-								>
-									<option className="text-center text-red-900" value="">
-										Chris Ejik Groups
-									</option>
-									<option className="text-center text-red-900" value="">
-										Chris Ejik Pharmaceuticals
-									</option>
-									<option className="text-center text-red-900" value="">
-										Chris Ejik International
-									</option>
-									<option className="text-center text-red-900" value="">
-										Chris Ejik Engineering
-									</option>
-								</select>
+							<div className="hidden lg:block">
+								<NavSelect isLight={isLight} />
 							</div>
 						</div>
 					</div>

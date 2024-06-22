@@ -47,7 +47,7 @@ const Nav = () => {
 				{data.map((item) =>
 					item.isDropdown ? (
 						<NavigationMenuItem key={item.id}>
-							<NavigationMenuTrigger className="h-fit bg-transparent p-2 text-xs hover:bg-accent">
+							<NavigationMenuTrigger className="h-fit bg-transparent p-2 text-5xl font-normal hover:bg-accent lg:text-xs">
 								{item.title}
 							</NavigationMenuTrigger>
 							<NavigationMenuContent></NavigationMenuContent>
@@ -55,7 +55,7 @@ const Nav = () => {
 					) : item.isExt ? (
 						<NavigationMenuItem key={item.id}>
 							<a
-								className="inline-block w-full rounded-md p-2 text-xs hover:bg-accent hover:text-black"
+								className="inline-block w-full rounded-md p-2 text-5xl hover:bg-accent hover:text-black lg:text-xs"
 								href={item.link}
 								target="_blank"
 								rel="noreferrer"
@@ -66,7 +66,7 @@ const Nav = () => {
 					) : (
 						<NavigationMenuItem key={item.id}>
 							<Link
-								className="inline-block w-full rounded-md p-2 text-xs hover:bg-accent hover:text-black"
+								className="inline-block w-full rounded-md p-2 text-5xl hover:bg-accent hover:text-black lg:text-xs"
 								href={item.link}
 							>
 								{item.title}
