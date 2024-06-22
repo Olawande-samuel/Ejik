@@ -96,18 +96,23 @@
 }
 
 .one {
-	left: 50px;
-	top: 10px;
+	left: 50%;
+	top: 50%
+	/* left: 50px;
+	top: 10px; */
 }
 .two {
 	left: 50%;
-	transform: translateX(-50%);
-	top: 10px;
+	top: 50%
+	/* transform: translateX(-50%);
+	top: 10px; */
 }
 .three {
-	left: calc(50 + var(--box-width));
+	left: 50%;
+	top: 50%;
+	/* left: calc(50 + var(--box-width));
 	top: 10px;
-	right: 50px;
+	right: 50px; */
 }
 .four {
 	/* left: calc(50 + var(--box-width)); */
@@ -117,9 +122,9 @@
 }
 .five {
 	/* left: calc(50 + var(--box-width)); */
-	bottom: 10px;
+	/* bottom: 10px;
 	right: 25%;
-	transform: translateX(25%);
+	transform: translateX(25%); */
 }
 .six {
 	bottom: 10px;
