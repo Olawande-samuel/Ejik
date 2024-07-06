@@ -97,13 +97,13 @@
 
 .one {
 	left: 50%;
-	top: 50%
+	top: 50%;
 	/* left: 50px;
 	top: 10px; */
 }
 .two {
 	left: 50%;
-	top: 50%
+	top: 50%;
 	/* transform: translateX(-50%);
 	top: 10px; */
 }
@@ -137,3 +137,5 @@
 	transform: translateY(-50%);
 	left: 50px;
 }
+
+
