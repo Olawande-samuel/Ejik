@@ -106,6 +106,7 @@ const Portal = ({ title, text, btn }: Props) => {
 							initial="initial"
 							whileInView="animate"
 							variants={squareVariants}
+							viewport={{ once: true }}
 							key={item.id}
 							className={cn(
 								"absolute w-[180px] h-[150px] hidden lg:block ",
