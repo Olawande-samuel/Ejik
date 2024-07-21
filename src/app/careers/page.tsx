@@ -2,7 +2,10 @@ import Portal from "@/components/Portal";
 import Jobs from "@/components/careers/Jobs";
 import WhyJoin from "@/components/careers/WhyJoin";
 import Navbar from "@/components/landing/Navbar";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+	title: "Careers | Ejik ",
+};
 const Careers = () => {
 	return (
 		<div>
