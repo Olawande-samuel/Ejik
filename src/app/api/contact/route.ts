@@ -26,7 +26,9 @@ export async function POST(request: Request) {
 	const data = await request.json();
 	const validatedFields = FormSchema.safeParse(data);
 	if (!validatedFields.success) {
-		return { errors: validatedFields.error.flatten().fieldErrors };
+		return NextResponse.json({
+			errors: validatedFields.error.flatten().fieldErrors,
+		});
 	}
 	try {
 		const transporter = await setupMailer();
@@ -46,7 +48,6 @@ export async function POST(request: Request) {
 			message: "Message sent successfully",
 		});
 	} catch (error) {
-		console.log(error);
 		return NextResponse.json(
 			{ error: "An error occurred sending your message" },
 			{ status: 500 },
