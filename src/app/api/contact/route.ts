@@ -34,7 +34,7 @@ export async function POST(request: Request) {
 		const transporter = await setupMailer();
 		const info = await transporter.sendMail({
 			from: validatedFields.data.email,
-			to: "olawandesamuel@gmail.com",
+			to: "rand@mail.com",
 			subject:
 				"From: " +
 				validatedFields.data.first_name +
