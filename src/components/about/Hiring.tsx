@@ -1,12 +1,24 @@
+import { getContent } from "@/action/query";
+import { ALL_JOBS } from "@/querys";
+import {
+	dehydrate,
+	HydrationBoundary,
+	QueryClient,
+} from "@tanstack/react-query";
+import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import Container from "../Container";
 import Text from "../Text";
 import TextH2 from "../TextH2";
-import Image from "next/image";
-import JobCard from "./JobCard";
-import { Separator } from "../ui/separator";
+import HiringJobs from "./HiringJobs";
 
-const Hiring = () => {
+const Hiring = async () => {
+	const queryClient = new QueryClient();
+	await queryClient.prefetchQuery({
+		queryKey: ["get job"],
+		queryFn: () => getContent(ALL_JOBS),
+	});
 	return (
 		<section className="min-h-[120vh] py-24">
 			<Container>
@@ -32,13 +44,15 @@ const Hiring = () => {
 					</div>
 					<div className="flex flex-col items-center gap-8 lg:flex-row">
 						<section className="md:basis-3/5">
-							<JobCard />
-							<Separator className="bg-[#EAECF0]" />
-							<JobCard />
+							<HydrationBoundary state={dehydrate(queryClient)}>
+								<Suspense fallback={<p>Loading...</p>}>
+									<HiringJobs />
+								</Suspense>
+							</HydrationBoundary>
 						</section>
 						<section className="md:basis-2/5">
 							<Image
-								src="/images/jobs.webp"
+								src="/images/Jobs.webp"
 								width={600}
 								height={655}
 								className="max-w-full"

@@ -1,7 +1,6 @@
 import Container from "../Container";
 import Text from "../Text";
-import JobCard from "../about/JobCard";
-import Tabs from "./Tabs";
+import JobTabs from "./JobTabs";
 
 const Jobs = () => {
 	return (
@@ -14,14 +13,7 @@ const Jobs = () => {
 							className="mb-14 text-xl text-accent md:w-full"
 						/>
 					</div>
-					<div>
-						<Tabs />
-						<div className="w-full lg:w-[70%] screen-980:lg:w-3/5">
-							<JobCard />
-							<JobCard />
-							<JobCard />
-						</div>
-					</div>
+					<JobTabs />
 				</div>
 			</Container>
 		</section>

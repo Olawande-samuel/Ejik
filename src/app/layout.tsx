@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import ReactQueryProvider from "@/providers";
 
 const outfit = Outfit({
 	subsets: ["latin"],
@@ -11,6 +12,14 @@ const outfit = Outfit({
 export const metadata: Metadata = {
 	title: "Chris Ejik Group",
 	description: "Chris Ejik Group of Companies",
+	openGraph: {
+		title: "Chris Ejik",
+		description:
+			"Leading company in pharmaceutical, healthcare, international travels and tours, and Engineering",
+		type: "website",
+		url: process.env.NEXT_PUBLIC_WEBSITE_URL,
+		siteName: "Chris Ejik Group of Companies",
+	},
 };
 
 export default function RootLayout({
@@ -21,8 +30,10 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={outfit.className}>
-				{children}
-				<Footer />
+				<ReactQueryProvider>
+					{children}
+					<Footer />
+				</ReactQueryProvider>
 			</body>
 		</html>
 	);

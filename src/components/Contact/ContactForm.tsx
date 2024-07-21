@@ -29,13 +29,30 @@ const ContactForm = () => {
 	const form = useForm<z.infer<typeof FormSchema>>({
 		resolver: zodResolver(FormSchema),
 	});
+	async function onSubmit(values: z.infer<typeof FormSchema>) {
+		const api_url = "/api/contact";
+
+		const api_req_options = {
+			method: "POST",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify(values),
+		};
+
+		const res = await fetch(api_url, api_req_options);
+		const dt = await res.json();
+		console.log(dt);
+	}
+
 	return (
 		<div className="pl-padded-sm pr-8 sm:pl-padded-md md:pl-padded-lg 2xl:pl-padded-xl">
 			<Text value="Contact Us" className="mb-3 text-accent" />
 			<TextH2 value="Get In Touch" className="mb-5 text-[#515355]" />
 			<Text value="Lorem ipsum dolor sit amet consectetur. Eu amet pellentesque porta felis. Fringilla semper sed id pellentesque." />
+
 			<Form {...form}>
-				<form>
+				<form onSubmit={form.handleSubmit(onSubmit)}>
 					<div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-2">
 						<FormField
 							name="first_name"
@@ -77,11 +94,11 @@ const ContactForm = () => {
 							)}
 						/>
 						<FormField
-							name="message"
+							name="phone_number"
 							control={form.control}
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Last Name</FormLabel>
+									<FormLabel>Phone Number</FormLabel>
 									<FormControl>
 										<Input {...field} placeholder="+(234)345-454-985" />
 									</FormControl>
@@ -91,7 +108,7 @@ const ContactForm = () => {
 						/>
 					</div>
 					<FormField
-						name="phone_number"
+						name="message"
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
@@ -111,7 +128,7 @@ const ContactForm = () => {
 					/>
 
 					<div className="mt-14">
-						<Button className="h-10 rounded-sm bg-accent text-xs">
+						<Button className="h-10 rounded-sm bg-accent text-xs hover:bg-opacity-40 focus:bg-opacity-40">
 							Send Message
 						</Button>
 					</div>
