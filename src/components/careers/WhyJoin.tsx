@@ -20,7 +20,7 @@ const data = [
 	{
 		id: 3,
 		title: "Empowerment",
-		image: "/images/jobs.webp",
+		image: "/images/Jobs.webp",
 		text: "",
 	},
 ];
