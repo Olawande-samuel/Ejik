@@ -1,7 +1,20 @@
 import ContactCard from "@/components/Contact/Card";
 import ContactForm from "@/components/Contact/ContactForm";
 import Navbar from "@/components/landing/Navbar";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+	title: "Contact Us | Ejik ",
+	description: "Contact Us at Ejik Group of companies",
+	openGraph: {
+		title: "Contact Us | Ejik",
+		description:
+			"Leading company in pharmaceutical, healthcare, international travels and tours, and Engineering",
+		type: "website",
+		url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/contact-us`,
+		siteName: "Chris Ejik Group of Companies",
+	},
+};
 const ContactUs = () => {
 	return (
 		<section>

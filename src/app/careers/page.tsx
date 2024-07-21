@@ -5,6 +5,15 @@ import Navbar from "@/components/landing/Navbar";
 import { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "Careers | Ejik ",
+	description: "Careers in Chris Ejik Group of Companies",
+	openGraph: {
+		title: "Careers at Ejik",
+		description:
+			"Leading company in pharmaceutical, healthcare, international travels and tours, and Engineering",
+		type: "website",
+		url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/careers`,
+		siteName: "Chris Ejik Group of Companies",
+	},
 };
 const Careers = () => {
 	return (
