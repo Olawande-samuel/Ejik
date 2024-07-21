@@ -10,7 +10,7 @@ import { Skeleton } from "../ui/skeleton";
 import { Job } from "@/lib/types";
 
 const JobTabs = () => {
-	const [selected, setSelected] = useState("view all");
+	const [selected, setSelected] = useState("View All");
 	const { data, isLoading } = useQuery({
 		queryKey: ["get jobs"],
 		queryFn: () => getContent(ALL_JOBS),
