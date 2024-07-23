@@ -6,8 +6,18 @@ import {
 	HydrationBoundary,
 	QueryClient,
 } from "@tanstack/react-query";
+import { Metadata } from "next";
 import { Suspense } from "react";
 
+export const metadata: Metadata = {
+	title: "Hiring",
+	description: "We are hiring. Check here for open positions",
+	keywords: ["jobs, open positions, hiring"],
+	openGraph: {
+		title: "Open Positions",
+		description: "We are hiring",
+	},
+};
 const OpenPositions = async () => {
 	const queryClient = new QueryClient();
 	await queryClient.prefetchQuery({
