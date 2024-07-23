@@ -1,6 +1,6 @@
 "use client";
 import { getContent } from "@/action/query";
-import { ALL_JOBS } from "@/querys";
+import { ALL_JOBS } from "@/queries";
 import { useQuery } from "@tanstack/react-query";
 import { Skeleton } from "../ui/skeleton";
 import { Job } from "@/lib/types";
@@ -12,6 +12,7 @@ const HiringJobs = () => {
 		queryKey: ["get jobs"],
 		queryFn: () => getContent(ALL_JOBS),
 	});
+	const jobResults = data as Job[];
 	return (
 		<div>
 			{isLoading ? (
@@ -20,8 +21,8 @@ const HiringJobs = () => {
 					<Skeleton className="my-4 h-[280px] w-full" />
 					<Skeleton className="my-4 h-[280px] w-full" />
 				</>
-			) : data?.length > 0 ? (
-				data?.map((item: Job, index: string) => (
+			) : jobResults?.length > 0 ? (
+				jobResults?.slice(0, 2).map((item: Job, index: number) => (
 					<div key={item._id + index}>
 						<JobCard {...item} />
 						<Separator className="bg-[#EAECF0]" />

@@ -1,8 +1,8 @@
 "use client";
 
 import { getContent } from "@/action/query";
-import { Category } from "@/lib/types";
-import { JOB_CATEGORIES } from "@/querys";
+import { Category, Job } from "@/lib/types";
+import { JOB_CATEGORIES } from "@/queries";
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import Tab from "./Tab";
@@ -36,9 +36,9 @@ const Tabs = ({
 	const query = useQuery({
 		queryKey: ["get job categories"],
 		queryFn: () => getContent(JOB_CATEGORIES),
-		enabled: selected === "view all",
 	});
 
+	const queryResult = query?.data as Job[];
 	return (
 		<div className="md:px-5">
 			<Tab
@@ -49,7 +49,7 @@ const Tabs = ({
 				onClick={() => setSelected(data[0].title)}
 				key="all"
 			/>
-			{query?.data?.map((item: Category) => {
+			{queryResult?.map((item: Category) => {
 				const isSelected =
 					item.slug.current.toLowerCase() === selected.toLowerCase();
 				return (
