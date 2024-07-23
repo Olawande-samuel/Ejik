@@ -24,7 +24,7 @@ export const ALL_JOBS = `*[_type == "job"]|order(_createdAt desc) {
 }`;
 export const JOB_BY_ID = `*[_type == "job" && $slug == slug.current ]|order(_createdAt desc) {
   ...
-}`;
+}[0]`;
 export const JOB_BY_CATEGORIES_ID = `*[_type == "jobs" && $name in fields[]->.title]|order(_createdAt desc) {
   ...
 }`;

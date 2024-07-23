@@ -20,7 +20,7 @@ const JobCard = ({
 	slug,
 }: Job) => {
 	return (
-		<Card className="border-none shadow-none">
+		<Card className="max-w-[750px] border-none shadow-none">
 			<CardHeader className="space-y-2 pb-2">
 				<CardTitle className="text-lg">{title}</CardTitle>
 			</CardHeader>
@@ -50,7 +50,7 @@ const JobCard = ({
 				</div>
 				<div>
 					<Link
-						href={`/careers/${slug.current}`}
+						href={`/careers/job/${slug.current}`}
 						className="flex text-sm font-semibold text-accent"
 					>
 						View job <ArrowUpRight className="ml-2" />

@@ -1,5 +1,5 @@
 import { getContent } from "@/action/query";
-import { ALL_JOBS } from "@/querys";
+import { ALL_JOBS } from "@/queries";
 import {
 	dehydrate,
 	HydrationBoundary,
@@ -16,7 +16,7 @@ import HiringJobs from "./HiringJobs";
 const Hiring = async () => {
 	const queryClient = new QueryClient();
 	await queryClient.prefetchQuery({
-		queryKey: ["get job"],
+		queryKey: ["get jobs"],
 		queryFn: () => getContent(ALL_JOBS),
 	});
 	return (
@@ -37,7 +37,7 @@ const Hiring = async () => {
 							className="mb-2 text-[#515355] md:max-w-[600px]"
 						/>
 						<div className="mb-20 flex justify-end">
-							<Link href="/about-us" className="text-accent underline">
+							<Link href="/careers/all" className="text-accent underline">
 								View All Available Open Positions
 							</Link>
 						</div>

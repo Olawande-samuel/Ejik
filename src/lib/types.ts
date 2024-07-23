@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface Category {
 	slug: { current: string; _type: string };
 	title: string;
@@ -16,7 +17,7 @@ export interface Job {
 	salaryRange: string;
 	applicationLink: string;
 	preview: string;
-	description: string;
+	description: any[];
 	level: { title: string } | null;
 	field: {
 		title: string;

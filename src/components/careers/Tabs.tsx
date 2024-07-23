@@ -2,7 +2,7 @@
 
 import { getContent } from "@/action/query";
 import { Category } from "@/lib/types";
-import { JOB_CATEGORIES } from "@/querys";
+import { JOB_CATEGORIES } from "@/queries";
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import Tab from "./Tab";
@@ -36,9 +36,7 @@ const Tabs = ({
 	const query = useQuery({
 		queryKey: ["get job categories"],
 		queryFn: () => getContent(JOB_CATEGORIES),
-		enabled: selected === "view all",
 	});
-
 	return (
 		<div className="md:px-5">
 			<Tab
