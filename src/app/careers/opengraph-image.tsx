@@ -8,11 +8,12 @@ export default async function OpenGraphImage() {
 	const outfitSemiBold = fetch(
 		new URL("./Outfit-SemiBold.ttf", import.meta.url),
 	).then((res) => res.arrayBuffer());
+
 	const Image = new ImageResponse(
 		(
 			<div
 				style={{
-					fontSize: 108,
+					fontSize: 128,
 					background: "#eee",
 					width: "100%",
 					height: "100%",
@@ -23,7 +24,7 @@ export default async function OpenGraphImage() {
 					color: "#EC1C24",
 				}}
 			>
-				<p>Ejik Group of Companies</p>
+				<p className="text-accent">Careers At Ejik</p>
 			</div>
 		),
 		{
