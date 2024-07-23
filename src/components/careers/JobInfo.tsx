@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import Body from "../Body";
 import { Job } from "@/lib/types";
 import { Button } from "../ui/button";
+import { notFound } from "next/navigation";
 
 const JobInfo = ({ slug }: { slug: string }) => {
 	const query = useQuery({
@@ -13,6 +14,9 @@ const JobInfo = ({ slug }: { slug: string }) => {
 		queryFn: () => getContent(JOB_BY_ID, { slug }),
 	});
 	const data: Job = query.data as Job;
+	if (data === null) {
+		notFound();
+	}
 	return (
 		<div className="min-h-screen pb-10">
 			<h3 className="mb-5 mt-10 text-3xl font-medium">{data?.title}</h3>

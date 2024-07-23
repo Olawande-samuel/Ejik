@@ -6,7 +6,7 @@ export const contentType = "image/png";
 
 export default async function OpenGraphImage() {
 	const outfitSemiBold = fetch(
-		new URL("./Outfit-SemiBold.ttf", import.meta.url),
+		new URL("../Outfit-SemiBold.ttf", import.meta.url),
 	).then((res) => res.arrayBuffer());
 
 	const Image = new ImageResponse(
