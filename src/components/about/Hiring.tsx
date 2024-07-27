@@ -36,7 +36,7 @@ const Hiring = async () => {
 							value="Lorem ipsum dolor sit amet consectetur. Eu amet pellentesque porta felis. Fringilla semper sed id pellentesque."
 							className="mb-2 text-[#515355] md:max-w-[600px]"
 						/>
-						<div className="mb-20 flex justify-end">
+						<div className="mb-4 flex justify-end">
 							<Link href="/careers/all" className="text-accent underline">
 								View All Available Open Positions
 							</Link>
