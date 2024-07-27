@@ -11,13 +11,13 @@ const ImageTextColumn = () => {
 				<Container>
 					<div className="flex h-full items-center">
 						<div className="flex flex-col gap-6 py-20 md:flex-row screen-980:py-5">
-							<div className="basis-[45%]">
+							<div className="sm:basis-[45%]">
 								<Image
 									src="/images/pill_lightening.png"
 									width={500}
 									height={500}
 									alt="decorative"
-									className="max-h-[400px]  md:max-h-full "
+									className="max-h-[300px] sm:max-h-[400px] md:max-h-full "
 								/>
 							</div>
 							<div className="basis-[55%] space-y-6">

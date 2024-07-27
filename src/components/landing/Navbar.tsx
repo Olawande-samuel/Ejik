@@ -20,7 +20,7 @@ const Navbar = ({ isLight = false }: { isLight?: boolean }) => {
 						<div className="">
 							<Link href="/">
 								<Image
-									src="/images/logo.svg"
+									src={isLight ? "/images/logo.svg" : "/images/logo-home.svg"}
 									width={130}
 									height={40}
 									alt="logo"
