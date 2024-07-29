@@ -12,18 +12,20 @@ export default async function OpenGraphImage() {
 		(
 			<div
 				style={{
-					fontSize: 108,
-					background: "#eee",
-					width: "100%",
 					height: "100%",
+					width: "100%",
 					display: "flex",
-					textAlign: "center",
+					flexDirection: "column",
 					alignItems: "center",
 					justifyContent: "center",
-					color: "#EC1C24",
+					backgroundColor: "#EC1C24",
+					fontSize: 32,
+					fontWeight: 600,
 				}}
 			>
-				<p>Ejik Group of Companies</p>
+				<img
+					src={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/images/logo-white.svg`}
+				/>
 			</div>
 		),
 		{
