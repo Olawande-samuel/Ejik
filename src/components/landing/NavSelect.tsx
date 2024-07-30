@@ -11,16 +11,16 @@ const NavSelect = ({ isLight }: { isLight: boolean }) => {
 			return;
 		}
 		if (value === "2") {
-			window.open("https://ejik-pharmacy.vercel.app/", "_blank");
+			window.open(process.env.NEXT_PUBLIC_PHARMACY_WEBSITE_URL, "_blank");
 		}
 		if (value === "3") {
-			window.open("https://ejik-international.vercel.app/", "_blank");
+			window.open(process.env.NEXT_PUBLIC_INTERNATIONAL_WEBSITE_URL, "_blank");
 		}
 	}, [value]);
 	return (
 		<div
 			className={cn(
-				"rounded-md border-[0.52px] border-white px-4",
+				"rounded-md border-[0.52px] mb-4 lg:mb-0 border-white px-0 lg:px-4",
 				isLight && "border-primary",
 			)}
 		>
@@ -30,7 +30,7 @@ const NavSelect = ({ isLight }: { isLight: boolean }) => {
 				}
 				value="1"
 				className={cn(
-					"rounded-none border-0 bg-transparent text-xs text-white focus:ring-0 focus-visible:outline-none",
+					"w-full rounded-none border-0 bg-transparent text-base lg:text-xs text-white focus:ring-0 focus-visible:outline-none",
 					isLight && "text-primary border-primary",
 				)}
 			>

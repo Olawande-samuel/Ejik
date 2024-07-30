@@ -25,8 +25,16 @@ const Footer = () => {
 						<li>Impact stories</li>
 					</ul>
 					<ul className="space-y-1 text-sm">
-						<li>Careers</li>
-						<li>Contact Us</li>
+						<li>
+							<Link href="/careers" className="hover:text-accent">
+								Careers
+							</Link>
+						</li>
+						<li>
+							<Link href="/contact-us" className="hover:text-accent">
+								Contact Us
+							</Link>
+						</li>
 					</ul>
 					<ul className="space-y-1 text-sm">
 						<li>Privacy Policy</li>

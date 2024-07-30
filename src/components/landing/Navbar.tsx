@@ -50,7 +50,7 @@ const Navbar = ({ isLight = false }: { isLight?: boolean }) => {
 					</div>
 				</Container>
 			</nav>
-			{openNav && <NavMobile setOpenNav={setOpenNav} />}
+			{openNav && <NavMobile setOpenNav={setOpenNav} openNav={openNav} />}
 		</section>
 	);
 };

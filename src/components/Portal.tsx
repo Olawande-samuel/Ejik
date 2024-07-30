@@ -6,6 +6,7 @@ import Text from "./Text";
 import TextH2 from "./TextH2";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const data = [
 	{
@@ -95,7 +96,11 @@ const Portal = ({ title, text, btn }: Props) => {
 			<div className="z-20 flex w-full flex-col items-center justify-center space-y-6 sm:w-[445px]">
 				<TextH2 value={title} className="text-center font-normal" />
 				<Text className="text-center" value={text} />
-				{btn && <Btn title={btn} />}
+				{btn && (
+					<Link href="/careers">
+						<Btn title={btn} className="hover:bg-white hover:text-black" />
+					</Link>
+				)}
 			</div>
 			<div className="absolute inset-0">
 				<div className="relative h-full">
