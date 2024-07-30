@@ -37,20 +37,22 @@ const CaseStudy = () => {
 	return (
 		<section className="flex flex-col  px-14 pb-28 pt-12 md:flex-row">
 			<div className="md:basis-4/12">
-				<p>Our case studies</p>
+				<p className="font-bold">Our case studies</p>
 			</div>
 			<div className="md:basis-8/12">
-				<p className="mb-16">We Provide QUALITY with Efficient resources</p>
+				<p className="mb-6 md:mb-16">
+					We Provide QUALITY with Efficient resources
+				</p>
 				<div>
 					<div className="grid grid-cols-1 gap-6 lg:grid-cols-6 ">
 						{data.map((item) => (
 							<div
 								key={item.id}
-								className="col-span-6 row-span-2 h-[350px] first:row-span-4 first:h-[400px] lg:col-span-3 lg:first:col-span-6 "
+								className="col-span-6 row-span-2 h-[350px] first:row-span-4 sm:first:h-[400px] lg:col-span-3 lg:first:col-span-6 "
 							>
 								<CardWithOverlay
 									{...item}
-									textClassName={`${item.id !== 1 ? "text-sm" : "md:w-[65%]"}`}
+									textClassName={`${item.id !== 1 ? "text-lg sm:text-sm" : "md:w-[65%]"}`}
 									btnClassName={item.id !== 1 ? "h-7 text-xs" : ""}
 								/>
 							</div>

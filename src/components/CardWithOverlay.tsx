@@ -40,7 +40,7 @@ const CardWithOverlay = ({
 						<p>0{id}</p>
 					</div>
 					<div className="flex h-full flex-1 flex-col justify-between">
-						<div>Chris Ejik Pharmaceuticals</div>
+						<div className="">Chris Ejik Pharmaceuticals</div>
 						<div className="flex flex-wrap items-end justify-between gap-4">
 							<Text className={textClassName} value={description} />
 							<Btn title="Read More" className={btnClassName} />
