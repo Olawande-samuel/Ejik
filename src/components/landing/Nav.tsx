@@ -23,7 +23,7 @@ const data = [
 	{
 		id: 3,
 		title: "News & Events",
-		link: "https://ejik-blog.vercel.app/",
+		link: process.env.NEXT_PUBLIC_BLOG_WEBSITE_URL,
 		isExt: true,
 	},
 	{
@@ -47,7 +47,7 @@ const Nav = () => {
 				{data.map((item) =>
 					item.isDropdown ? (
 						<NavigationMenuItem key={item.id}>
-							<NavigationMenuTrigger className="h-fit bg-transparent p-2 font-normal hover:bg-accent lg:text-xs">
+							<NavigationMenuTrigger className="h-fit bg-transparent p-2 text-base font-normal hover:bg-accent lg:text-xs">
 								{item.title}
 							</NavigationMenuTrigger>
 							<NavigationMenuContent></NavigationMenuContent>
@@ -55,7 +55,7 @@ const Nav = () => {
 					) : item.isExt ? (
 						<NavigationMenuItem key={item.id}>
 							<a
-								className="inline-block w-full rounded-md p-2  hover:bg-accent hover:text-black lg:text-xs"
+								className="inline-block w-full rounded-md p-2 text-base  hover:bg-accent hover:text-black lg:text-xs"
 								href={item.link}
 								target="_blank"
 								rel="noreferrer"
@@ -67,7 +67,7 @@ const Nav = () => {
 						<NavigationMenuItem key={item.id}>
 							<Link
 								className="inline-block w-full rounded-md p-2 hover:bg-accent hover:text-black lg:text-xs"
-								href={item.link}
+								href={item.link as string}
 							>
 								{item.title}
 							</Link>

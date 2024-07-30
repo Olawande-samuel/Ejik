@@ -11,10 +11,10 @@ const NavSelect = ({ isLight }: { isLight: boolean }) => {
 			return;
 		}
 		if (value === "2") {
-			window.open("https://ejik-pharmacy.vercel.app/", "_blank");
+			window.open(process.env.NEXT_PUBLIC_PHARMACY_WEBSITE_URL, "_blank");
 		}
 		if (value === "3") {
-			window.open("https://ejik-international.vercel.app/", "_blank");
+			window.open(process.env.NEXT_PUBLIC_INTERNATIONAL_WEBSITE_URL, "_blank");
 		}
 	}, [value]);
 	return (

@@ -4,10 +4,11 @@ import NavSelect from "./NavSelect";
 
 const NavMobile = ({
 	setOpenNav,
+	openNav,
 }: {
 	setOpenNav: React.Dispatch<SetStateAction<boolean>>;
+	openNav: boolean;
 }) => {
-	const isOpen = true;
 	return (
 		// <section className="fixed inset-0 flex h-full flex-col bg-accent lg:hidden">
 		// 	<div className="flex justify-center">
@@ -32,7 +33,7 @@ const NavMobile = ({
 			{/* Sidebar */}
 			<div
 				className={` fixed left-0 top-0 z-50 h-full w-64 bg-accent p-5 text-white transition-transform duration-300 ease-in-out${
-					isOpen ? "translate-x-0" : "-translate-x-full"
+					openNav ? "translate-x-0" : "-translate-x-full"
 				}`}
 			>
 				<h2 className="mb-5 text-3xl font-bold">Menu</h2>
@@ -43,7 +44,7 @@ const NavMobile = ({
 			</div>
 
 			{/* Overlay */}
-			{isOpen && (
+			{openNav && (
 				<div
 					className="fixed inset-0 z-40 bg-black/50"
 					onClick={() => setOpenNav(false)}
