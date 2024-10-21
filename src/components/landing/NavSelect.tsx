@@ -43,9 +43,9 @@ const NavSelect = ({ isLight }: { isLight: boolean }) => {
 				<option className="text-center text-red-900" value="3">
 					Chris Ejik International
 				</option>
-				<option value="4" className="text-center text-red-900">
+				{/* <option value="4" className="text-center text-red-900">
 					Chris Ejik Engineering
-				</option>
+				</option> */}
 			</select>
 		</div>
 	);

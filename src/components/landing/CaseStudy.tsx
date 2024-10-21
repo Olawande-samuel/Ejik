@@ -35,7 +35,7 @@ const data = [
 
 const CaseStudy = () => {
 	return (
-		<section className="flex flex-col  px-14 pb-28 pt-12 md:flex-row">
+		<section className="flex flex-col bg-[url('/images/case-studies-bg.png')] bg-contain bg-center bg-no-repeat px-14 pb-28 pt-12 md:flex-row">
 			<div className="md:basis-4/12">
 				<p className="font-bold">Our case studies</p>
 			</div>

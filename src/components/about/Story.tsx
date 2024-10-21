@@ -27,7 +27,7 @@ const Story = () => {
 								/>
 							</div>
 							<div className="flex-1 space-y-6">
-								<p className="text-lg text-accent">About Us</p>
+								<p className="text-lg text-accent">Our Story</p>
 								<h2 className="text-5xl font-bold text-primary lg:text-7xl">
 									<span className="text-accent">30 years+</span> Empowering
 									lives, Energizing Futures

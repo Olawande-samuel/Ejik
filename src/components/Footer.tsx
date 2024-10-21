@@ -19,10 +19,26 @@ const Footer = () => {
 					</div>
 					<ul className="space-y-1 text-sm">
 						<li>Company</li>
-						<li>Subsidiaries</li>
-						<li>The team</li>
-						<li>Key achievements</li>
-						<li>Impact stories</li>
+						<li>
+							<Link href="/" className="hover:text-accent">
+								Subsidiaries
+							</Link>
+						</li>
+						<li>
+							<Link href="/about-us#team" className="hover:text-accent">
+								The team
+							</Link>
+						</li>
+						<li>
+							<Link href="/" className="hover:text-accent">
+								Key achievements
+							</Link>
+						</li>
+						<li>
+							<Link href="/" className="hover:text-accent">
+								Impact stories
+							</Link>
+						</li>
 					</ul>
 					<ul className="space-y-1 text-sm">
 						<li>

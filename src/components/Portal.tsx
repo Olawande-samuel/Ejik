@@ -1,76 +1,9 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
 import Btn from "./Btn";
 import Text from "./Text";
 import TextH2 from "./TextH2";
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import Link from "next/link";
-
-const data = [
-	{
-		id: 1,
-		image: "/images/portal1.webp",
-		className: "one",
-		left: "3%",
-		top: "10px",
-		x: "-50%",
-		y: "0",
-	},
-	{
-		id: 2,
-		image: "/images/portal2.webp",
-		className: "two",
-		left: "calc(50% - 90px)",
-		top: "10px",
-		x: "-50%",
-		y: "0",
-	},
-	{
-		id: 3,
-		image: "/images/portal3.webp",
-		className: "three",
-		left: "calc(100% - 200px)",
-		top: "10px",
-		x: "",
-		y: "10%",
-	},
-	{
-		id: 4,
-		image: "/images/portal4.webp",
-		className: "four",
-		left: "calc(100% - 200px)",
-		top: "50%",
-		y: "-50%",
-	},
-	{
-		id: 5,
-		image: "/images/portal5.webp",
-		className: "five",
-		left: "calc(50% + 180px)",
-		top: "calc(100% - 180px)",
-		x: "",
-		y: "",
-	},
-	{
-		id: 6,
-		image: "/images/portal6.webp",
-		className: "six",
-		left: "calc(50% - 270px)",
-		top: "calc(100% - 180px)",
-		x: "",
-		y: "",
-	},
-	{
-		id: 7,
-		image: "/images/portal7.webp",
-		className: "seven",
-		left: "3%",
-		top: "50%",
-		x: "-50%",
-	},
-];
 
 interface Props {
 	title: string;
@@ -79,57 +12,25 @@ interface Props {
 	link?: string;
 }
 
-const squareVariants = {
-	initial: { left: "50%", top: "50%", opacity: 0 },
-	animate: (custom: (typeof data)[0]) => ({
-		left: custom.left,
-		top: custom.top,
-		// x: custom.x,
-		// y: custom.y,
-		opacity: 1,
-		transition: { duration: 0.5, delay: custom.id * 0.3 },
-	}),
-};
 const Portal = ({ title, text, btn }: Props) => {
 	return (
-		<section className="bg-portal relative grid h-screen place-items-center bg-[#0F0F0F] px-8 md:min-h-section-taller screen-980:h-section">
-			<div className="z-20 flex w-full flex-col items-center justify-center space-y-6 sm:w-[445px]">
-				<TextH2 value={title} className="text-center font-normal" />
-				<Text className="text-center" value={text} />
+		<section className="relative grid  min-h-screen place-items-center bg-[url('/images/portal-bg.webp')] bg-cover bg-center bg-no-repeat px-4 md:h-[861px] md:min-h-section-taller screen-980:h-section">
+			<div className="z-20 flex max-w-[681px] flex-col items-center justify-center space-y-6 bg-white/95 px-2  py-20 text-primary sm:px-24 md:px-[120px]">
+				<TextH2
+					value={title}
+					className="text-center font-normal text-primary"
+				/>
+				<Text className="text-center text-primary" value={text} />
 				{btn && (
 					<Link href="/careers">
-						<Btn title={btn} className="hover:bg-white hover:text-black" />
+						<Btn
+							title={btn}
+							className="border-primary text-primary hover:bg-white hover:text-black"
+						/>
 					</Link>
 				)}
 			</div>
-			<div className="absolute inset-0">
-				<div className="relative h-full">
-					{data.map((item) => (
-						<motion.div
-							// whileHover={{ scale: 1.2 }}
-							custom={item}
-							initial="initial"
-							whileInView="animate"
-							variants={squareVariants}
-							viewport={{ once: true }}
-							key={item.id}
-							className={cn(
-								"absolute w-[180px] h-[150px] hidden lg:block ",
-								// item.className,
-								item.id === 1 || item.id === 5 ? "sm:block" : "",
-							)}
-						>
-							<Image
-								src={item.image}
-								alt=""
-								width={200}
-								height={150}
-								className="size-full"
-							/>
-						</motion.div>
-					))}
-				</div>
-			</div>
+			<div className="absolute inset-0"></div>
 		</section>
 	);
 };

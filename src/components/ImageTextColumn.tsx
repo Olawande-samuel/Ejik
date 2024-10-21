@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Container from "./Container";
 import Btn from "./Btn";
-import TitleText from "./TitleText";
+import Container from "./Container";
 import Text from "./Text";
 
 const ImageTextColumn = () => {
@@ -21,18 +20,14 @@ const ImageTextColumn = () => {
 								/>
 							</div>
 							<div className="basis-[55%] space-y-6">
-								<p className="text-lg ">About Us</p>
-								<TitleText
-									value="30 years+ Empowering lives, Energizing Futures"
-									className="text-primary"
-								/>
+								<p className="text-lg uppercase">About Us</p>
+								<h1 className="text-5xl font-bold  text-primary lg:text-7xl">
+									30 years+ <br />
+									Empowering lives, Energizing Futures
+								</h1>
 								<Text
 									className="text-primary-light"
-									value="Chris Ejik Group was established, with a mission to provide
-								access to high-quality healthcare and reliable electricity to as
-								many people as possible in Nigeria. Over the last three decades,
-								the company has remained true to its vision, effectively
-								delivering on its promise to the people."
+									value="Chris Ejik Group has consistently over a 30-year period, rooted her value in Nigeria from the perspective of improving the quality of life of Nigerians. What started as an opportunity from the government for local businesses to create value, soon grew to become a company established in creating access to essential Healthcare and Electrical power services and goods in the country."
 								/>
 
 								<Btn

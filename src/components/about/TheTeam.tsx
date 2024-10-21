@@ -24,7 +24,7 @@ const data = [
 
 const TheTeam = () => {
 	return (
-		<section className="min-h-[120vh] bg-primary py-32">
+		<section className="min-h-[120vh] bg-primary py-32" id="team">
 			<header className="md: mx-auto mb-20 w-full max-w-[600px] text-center">
 				<TextH2 value="Meet The Team" className="font-medium" />
 				<Text
