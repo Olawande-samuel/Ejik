@@ -10,18 +10,24 @@ const FormSchema = z.object({
 	phone_number: z.string().optional(),
 	message: z.string(),
 });
+
 async function setupMailer() {
 	const transporter = nodeMailer.createTransport({
-		host: "smtp-relay.brevo.com",
+		service: "gmail",
+		host: "smtp.gmail.com",
 		port: 587,
 		secure: false,
 		auth: {
-			user: "780c77001@smtp-brevo.com",
-			pass: "0mLzT1gId5BtFRqD",
+			user: process.env.ACCOUNT_EMAIL,
+			pass: process.env.ACCOUNT_PASSWORD,
+		},
+		tls: {
+			rejectUnauthorized: false,
 		},
 	});
 	return transporter;
 }
+
 export async function POST(request: Request) {
 	const data = await request.json();
 	const validatedFields = FormSchema.safeParse(data);
@@ -33,13 +39,13 @@ export async function POST(request: Request) {
 	try {
 		const transporter = await setupMailer();
 		const info = await transporter.sendMail({
-			from: validatedFields.data.email,
-			to: "rand@mail.com",
+			from: process.env.ACCOUNT_EMAIL,
+			to: process.env.RECEIVER_EMAIL,
 			subject:
 				"From: " +
 				validatedFields.data.first_name +
 				" " +
-				validatedFields.data.last_name,
+				validatedFields.data.email,
 			text: validatedFields.data.message,
 		});
 		console.log(info);

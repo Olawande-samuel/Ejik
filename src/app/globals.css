@@ -122,45 +122,26 @@
 	background-size: cover;
 }
 
-.one {
-	left: 50%;
-	/* top: 50%; */
-	/* left: 50px;
-	top: 10px; */
+.why_card {
+	perspective: 1000px;
+	width: 420px;
+	height: 619px;
 }
-.two {
-	left: 50%;
-	top: 50%;
-	/* transform: translateX(-50%);
-	top: 10px; */
+.card_content {
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 0.6s;
 }
-.three {
-	left: 50%;
-	top: 50%;
-	/* left: calc(50 + var(--box-width));
-	top: 10px;
-	right: 50px; */
+.rotate_card_content {
+	transform: rotateY(180deg);
 }
-.four {
-	/* left: calc(50 + var(--box-width)); */
-	top: 50%;
-	transform: translateY(-50%);
-	right: 50px;
+.card_front,
+.card_back {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	backface-visibility: hidden;
 }
-.five {
-	/* left: calc(50 + var(--box-width)); */
-	/* bottom: 10px;
-	right: 25%;
-	transform: translateX(25%); */
-}
-.six {
-	bottom: 10px;
-	left: 25%;
-	transform: translateX(25%);
-}
-
-.seven {
-	top: 50%;
-	transform: translateY(-50%);
-	left: 50px;
+.card_back {
+	transform: rotateY(180deg);
 }
